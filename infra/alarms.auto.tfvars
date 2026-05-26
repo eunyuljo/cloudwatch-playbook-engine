@@ -47,9 +47,9 @@ alarms = {
     treat_missing_data  = "notBreaching"
     severity            = "P3"
     dimensions = {
-      WebACL = "CHANGE_ME"
-      Rule   = "ALL"
-      Region = "ap-northeast-2"
+      WebACLName = "CHANGE_ME"
+      Rule       = "ALL"
+      Region     = "ap-northeast-2"
     }
     description = "WAF blocked requests spike (3x normal). Playbook: waf-block-spike.md"
   }
@@ -261,7 +261,7 @@ alarms = {
       BucketName = "CHANGE_ME"
       FilterId   = "EntireBucket"
     }
-    description = "S3 5xx errors detected. Playbook: s3-5xx.md"
+    description = "S3 5xx errors detected. Prerequisite: S3 request metrics must be enabled. Playbook: s3-5xx.md"
   }
 
   cloudtrail_stop = {

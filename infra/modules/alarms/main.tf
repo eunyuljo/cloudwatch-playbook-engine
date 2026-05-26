@@ -11,6 +11,7 @@ locals {
   }
 }
 
+
 resource "aws_cloudwatch_metric_alarm" "this" {
   for_each = var.alarms
 
@@ -28,8 +29,9 @@ resource "aws_cloudwatch_metric_alarm" "this" {
 
   dimensions = each.value.dimensions
 
-  alarm_actions = contains(["P1", "P2"], each.value.severity) ? [var.sns_topic_arn_p1p2] : [var.sns_topic_arn_p3p4]
-  ok_actions    = contains(["P1", "P2"], each.value.severity) ? [var.sns_topic_arn_p1p2] : [var.sns_topic_arn_p3p4]
+  alarm_actions             = contains(["P1", "P2"], each.value.severity) ? [var.sns_topic_arn_p1p2] : [var.sns_topic_arn_p3p4]
+  ok_actions                = contains(["P1", "P2"], each.value.severity) ? [var.sns_topic_arn_p1p2] : [var.sns_topic_arn_p3p4]
+  insufficient_data_actions = contains(["P1", "P2"], each.value.severity) ? [var.sns_topic_arn_p1p2] : [var.sns_topic_arn_p3p4]
 
   tags = {
     Project     = var.project

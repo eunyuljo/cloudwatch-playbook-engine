@@ -1,5 +1,6 @@
 resource "aws_sns_topic" "p1p2" {
-  name = "msp-alerts-p1p2"
+  name              = "msp-alerts-p1p2"
+  kms_master_key_id = "alias/aws/sns"
 
   tags = {
     Project     = var.project
@@ -11,7 +12,8 @@ resource "aws_sns_topic" "p1p2" {
 }
 
 resource "aws_sns_topic" "p3p4" {
-  name = "msp-alerts-p3p4"
+  name              = "msp-alerts-p3p4"
+  kms_master_key_id = "alias/aws/sns"
 
   tags = {
     Project     = var.project
