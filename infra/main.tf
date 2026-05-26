@@ -50,4 +50,5 @@ module "runbook" {
   app_log_group_name     = var.app_log_group_name
   target_group_arn       = var.target_group_arn
   log_level              = var.runbook_log_level
+  slack_webhook_url      = var.slack_webhook_url
 }

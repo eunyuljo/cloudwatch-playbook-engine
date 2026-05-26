@@ -40,6 +40,7 @@ resource "aws_lambda_function" "runbook_engine" {
       ECS_SERVICE_NAME       = var.ecs_service_name
       APP_LOG_GROUP_NAME     = var.app_log_group_name
       TARGET_GROUP_ARN       = var.target_group_arn
+      SLACK_WEBHOOK_URL      = var.slack_webhook_url
       LOG_LEVEL              = var.log_level
     }
   }

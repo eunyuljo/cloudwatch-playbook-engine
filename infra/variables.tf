@@ -83,3 +83,10 @@ variable "runbook_log_level" {
   type        = string
   default     = "INFO"
 }
+
+variable "slack_webhook_url" {
+  description = "Slack incoming webhook URL for runbook notifications (optional)"
+  type        = string
+  default     = ""
+  sensitive   = true
+}
