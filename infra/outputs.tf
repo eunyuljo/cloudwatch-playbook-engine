@@ -17,3 +17,8 @@ output "alarm_arns" {
   description = "Map of alarm key to alarm ARN"
   value       = module.alarms.alarm_arns
 }
+
+output "runbook_lambda_arn" {
+  description = "Runbook engine Lambda function ARN"
+  value       = module.runbook.lambda_function_arn
+}

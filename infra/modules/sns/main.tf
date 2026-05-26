@@ -35,3 +35,21 @@ resource "aws_sns_topic_subscription" "p3p4_email" {
   protocol  = "email"
   endpoint  = var.alert_email
 }
+
+resource "aws_sns_topic" "runbook_results" {
+  name              = "msp-runbook-results"
+  kms_master_key_id = "alias/aws/sns"
+
+  tags = {
+    Project     = var.project
+    Environment = var.environment
+    ManagedBy   = "terraform"
+    Service     = "Runbook"
+  }
+}
+
+resource "aws_sns_topic_subscription" "runbook_results_email" {
+  topic_arn = aws_sns_topic.runbook_results.arn
+  protocol  = "email"
+  endpoint  = var.alert_email
+}

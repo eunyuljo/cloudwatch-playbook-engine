@@ -53,3 +53,33 @@ variable "alarms" {
     error_message = "Each alarm treat_missing_data must be one of breaching, notBreaching, ignore, or missing."
   }
 }
+
+variable "ecs_cluster_name" {
+  description = "ECS cluster name for runbook diagnostics"
+  type        = string
+  default     = ""
+}
+
+variable "ecs_service_name" {
+  description = "ECS service name for runbook diagnostics"
+  type        = string
+  default     = ""
+}
+
+variable "app_log_group_name" {
+  description = "CloudWatch Log Group for application logs"
+  type        = string
+  default     = ""
+}
+
+variable "target_group_arn" {
+  description = "ALB Target Group ARN for health checks"
+  type        = string
+  default     = ""
+}
+
+variable "runbook_log_level" {
+  description = "Runbook Lambda log level (DEBUG, INFO, WARNING, ERROR)"
+  type        = string
+  default     = "INFO"
+}

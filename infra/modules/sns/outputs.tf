@@ -7,3 +7,8 @@ output "topic_arn_p3p4" {
   description = "ARN of the P3/P4 SNS topic"
   value       = aws_sns_topic.p3p4.arn
 }
+
+output "topic_arn_runbook_results" {
+  description = "ARN of the Runbook results SNS topic"
+  value       = aws_sns_topic.runbook_results.arn
+}
