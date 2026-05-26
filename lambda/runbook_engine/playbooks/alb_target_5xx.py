@@ -12,7 +12,7 @@ logger = logging.getLogger("runbook_engine")
 class AlbTarget5xxPlaybook(BasePlaybook):
     @property
     def alarm_keys(self) -> list:
-        return ["alb_target_5xx"]
+        return ["alb_target_5xx", "alb_unhealthy_host"]
 
     def run(self, alarm_message: dict) -> DiagnosisResult:
         target_group_arn = os.environ.get("TARGET_GROUP_ARN", "")

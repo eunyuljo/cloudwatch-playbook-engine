@@ -5,3 +5,4 @@
 *.tfvars
 !terraform.tfvars.example
 !alarms.auto.tfvars
+infra/modules/runbook/files/
