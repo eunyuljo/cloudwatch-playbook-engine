@@ -11,7 +11,7 @@ alarms = {
     treat_missing_data  = "notBreaching"
     severity            = "P1"
     dimensions = {
-      LoadBalancer = "app/msp-monitoring-test-alb/fcc43ebc12b34464"
+      LoadBalancer = "app/msp-monitoring-test-alb/69405672531aaae2"
     }
     description = "ALB-level 5xx count exceeded 10 in 5 min. Playbook: alb-elb-5xx.md"
   }
@@ -28,8 +28,8 @@ alarms = {
     treat_missing_data  = "notBreaching"
     severity            = "P2"
     dimensions = {
-      LoadBalancer = "app/msp-monitoring-test-alb/fcc43ebc12b34464"
-      TargetGroup  = "targetgroup/msp-monitoring-test-tg/abef6254f9a7058b"
+      LoadBalancer = "app/msp-monitoring-test-alb/69405672531aaae2"
+      TargetGroup  = "targetgroup/msp-monitoring-test-tg/f482d387343c43c1"
     }
     description = "ALB target 5xx count exceeded 5 in 1 min. Playbook: alb-target-5xx.md"
   }
@@ -46,14 +46,14 @@ alarms = {
     treat_missing_data  = "breaching"
     severity            = "P1"
     dimensions = {
-      LoadBalancer = "app/msp-monitoring-test-alb/fcc43ebc12b34464"
-      TargetGroup  = "targetgroup/msp-monitoring-test-tg/abef6254f9a7058b"
+      LoadBalancer = "app/msp-monitoring-test-alb/69405672531aaae2"
+      TargetGroup  = "targetgroup/msp-monitoring-test-tg/f482d387343c43c1"
     }
     description = "ALB unhealthy host detected. Playbook: alb-unhealthy-host.md"
   }
 
   ecs_running_task_low = {
-    namespace           = "AWS/ECS"
+    namespace           = "ECS/ContainerInsights"
     metric_name         = "RunningTaskCount"
     statistic           = "Minimum"
     comparison_operator = "LessThanThreshold"
@@ -71,7 +71,7 @@ alarms = {
   }
 
   ecs_cpu_high = {
-    namespace           = "AWS/ECS"
+    namespace           = "ECS/ContainerInsights"
     metric_name         = "CPUUtilization"
     statistic           = "Average"
     comparison_operator = "GreaterThanThreshold"
@@ -89,7 +89,7 @@ alarms = {
   }
 
   ecs_memory_high = {
-    namespace           = "AWS/ECS"
+    namespace           = "ECS/ContainerInsights"
     metric_name         = "MemoryUtilization"
     statistic           = "Average"
     comparison_operator = "GreaterThanThreshold"

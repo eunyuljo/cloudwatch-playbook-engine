@@ -13,3 +13,14 @@ alert_email = "ops-team@example.com"
 # lambda_function_name       = "my-function"
 # s3_bucket_name             = "my-bucket"
 # waf_webacl_name            = "my-webacl"
+
+slack_webhook_url = "https://hooks.slack.com/services...................."
+
+ecs_cluster_name   = "msp-monitoring-test-cluster"
+ecs_service_name   = "msp-monitoring-test-app"
+app_log_group_name = "/ecs/msp-monitoring-test/app"
+target_group_arn   = "arn:aws:elasticloadbalancing:ap-northeast-2:977099011692:targetgroup/msp-monitoring-test-tg/abef6254f9a7058b"
+
+
+
+
